@@ -4,8 +4,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Contact from './pages/Contact';
-
 
 function App() {
   return (
@@ -15,9 +13,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* Destinations route removed */}
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
           {/* Destinations page can be added later; using Home section for now */}
         </Routes>
       </main>

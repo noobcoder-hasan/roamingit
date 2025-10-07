@@ -16,9 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
-const contactRoutes = require('./routes/contact');
 const sheetsRoutes = require('./routes/sheets');
-app.use('/api', contactRoutes);
 app.use('/api', sheetsRoutes);
 
 // Health check endpoint
@@ -49,7 +47,6 @@ app.use('*', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`🚀 Roaming Travel API server is running on port ${PORT}`);
-  console.log(`📧 Contact form endpoint: http://localhost:${PORT}/api/contact`);
   console.log(`📊 Google Sheets endpoint: http://localhost:${PORT}/api/sheets`);
   console.log(`🏥 Health check: http://localhost:${PORT}/api/health`);
 });
