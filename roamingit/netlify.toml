@@ -1,10 +1,6 @@
 [build]
-  # This is the directory to change to before starting a build.
-  base = "frontend"
-  # This is the command to build your site.
-  command = "npm run build"
-  # This is the directory that contains the built site.
-  publish = "dist"
+  command = "cd frontend && npm run build"
+  publish = "frontend/dist"
 
 [functions]
   # This is the directory that contains the serverless functions.
