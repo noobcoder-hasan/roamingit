@@ -40,7 +40,7 @@ function sendToGoogleSheets(data) {
     
     const options = {
       hostname: 'script.google.com',
-      path: '/macros/s/AKfycby2aNrJzg2FiB0q5XgoEjHIDg7BMo4rtwBkoABUz1fYGRgllNmuj94Hiz08xRYVx_Px/exec',
+      path: process.env.GOOGLE_APPS_SCRIPT_URL,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

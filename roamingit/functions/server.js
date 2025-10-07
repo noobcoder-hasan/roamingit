@@ -1,11 +1,11 @@
 const express = require('express');
+const serverless = require('serverless-http');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors({
@@ -17,15 +17,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
-const sheetsRoutes = require('./routes/sheets');
+const sheetsRoutes = require('../routes/sheets');
 app.use('/api', sheetsRoutes);
 
 // Serve frontend
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'frontend/dist')));
+  app.use(express.static(path.join(__dirname, '..', 'frontend/dist')));
 
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '..', 'frontend', 'dist', 'index.html'));
   });
 }
 
@@ -55,10 +55,4 @@ app.use('*', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Roaming Travel API server is running on port ${PORT}`);
-  console.log(`📊 Google Sheets endpoint: http://localhost:${PORT}/api/sheets`);
-  console.log(`🏥 Health check: http://localhost:${PORT}/api/health`);
-});
-
-module.exports = app;
+module.exports.handler = serverless(app);

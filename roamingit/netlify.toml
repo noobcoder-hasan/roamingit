@@ -1,0 +1,16 @@
+[build]
+  # This is the directory to change to before starting a build.
+  base = "frontend"
+  # This is the command to build your site.
+  command = "npm run build"
+  # This is the directory that contains the built site.
+  publish = "dist"
+
+[functions]
+  # This is the directory that contains the serverless functions.
+  directory = "functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/server/:splat"
+  status = 200
