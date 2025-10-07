@@ -35,17 +35,17 @@ const teamsData = [
     skills: ['Docker', 'Kubernetes', 'CI/CD', 'Terraform'],
     experience: '6+ years',
     description: 'Expert in building robust, scalable infrastructure and automating deployment processes.'
+  },
+  {
+    id: 4,
+    name: 'Saify',
+    role: 'Mobile Developer',
+    specialization: 'Cross-Platform Apps',
+    image: teamMember4,
+    skills: ['React Native', 'Flutter', 'iOS', 'Android'],
+    experience: '3+ years',
+    description: 'Specialized in creating high-performance mobile applications for iOS and Android.'
   }
-  // {
-  //   id: 4,
-  //   name: 'Emily Davis',
-  //   role: 'Mobile Developer',
-  //   specialization: 'Cross-Platform Apps',
-  //   image: teamMember4,
-  //   skills: ['React Native', 'Flutter', 'iOS', 'Android'],
-  //   experience: '3+ years',
-  //   description: 'Specialized in creating high-performance mobile applications for iOS and Android.'
-  // }
 ];
 
 const Teams = () => {
