@@ -50,3 +50,5 @@ app.listen(PORT, () => {
   console.log(`📊 Google Sheets endpoint: http://localhost:${PORT}/api/sheets`);
   console.log(`🏥 Health check: http://localhost:${PORT}/api/health`);
 });
+
+module.exports = app;
