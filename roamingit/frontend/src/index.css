@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  color: #ffffff;
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(0, 229, 255, 0.08), transparent 60%),
+    radial-gradient(1000px 420px at 80% 20%, rgba(57, 91, 255, 0.10), transparent 60%),
+    #000;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+html { scroll-behavior: smooth; }
+
+:root {
+  /* Global theme: BLACK, BLUE, CYAN */
+  --color-black: #000000;
+  --color-blue: #395BFF; /* primary blue */
+  --color-cyan: #00AEEF; /* primary cyan */
+
+  /* Text and surfaces */
+  --text-primary: #ffffff;
+  --text-muted: #cfd8e3;
+  --surface-dark: rgba(20, 22, 28, 0.7);
+  --surface-darker: rgba(10, 12, 16, 0.65);
+  --border-light: rgba(255, 255, 255, 0.12);
+
+  /* Buttons */
+  --btn-text: #ffffff;
+  --btn-bg: linear-gradient(135deg, var(--color-cyan), var(--color-blue));
+  --btn-border: rgba(0, 229, 255, 0.25);
+  --btn-shadow: 0 10px 25px rgba(0, 229, 255, 0.28);
+  --btn-hover-bg: linear-gradient(135deg, #22ddff, #2a48dd);
+  --btn-active-bg: linear-gradient(135deg, #12c6ea, #233fcf);
+  --btn-focus: rgba(0, 229, 255, 0.4);
+
+  --btn-secondary-bg: rgba(255, 255, 255, 0.12);
+  --btn-secondary-text: var(--text-primary);
+  --btn-secondary-border: rgba(255, 255, 255, 0.18);
+  --btn-secondary-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Global realistic, responsive buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: clamp(.65rem, 1.6vw, .85rem) clamp(1rem, 2.8vw, 1.15rem);
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid var(--btn-border);
+  box-shadow: var(--btn-shadow);
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.btn-primary {
+  color: var(--btn-text);
+  background: var(--btn-bg);
+}
+.btn-secondary {
+  color: var(--btn-secondary-text);
+  background: var(--btn-secondary-bg);
+  border-color: var(--btn-secondary-border);
+  box-shadow: var(--btn-secondary-shadow);
+}
+.btn:hover { transform: translateY(-1px); filter: brightness(1.02); }
+.btn-primary:hover { background: var(--btn-hover-bg); }
+.btn:active { transform: translateY(0); filter: brightness(.98); }
+.btn-primary:active { background: var(--btn-active-bg); }
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-focus), var(--btn-shadow);
+}
+@media (max-width: 480px) {
+  .btn { border-radius: 10px; }
+}
+
+/* Animated background overlay with logo colors */
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(0, 174, 239, 0.1) 0, rgba(0, 174, 239, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(255, 193, 7, 0.08) 0, rgba(255, 193, 7, 0.08) 2px, transparent 2px);
+  background-size: 40px 40px, 60px 60px;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes bgFloat {
+  0% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(0,8px,0); }
+  100% { transform: translate3d(0,0,0); }
+}
+/* Hide horizontal scrollbar where supported */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Custom scrollbar with logo colors */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--color-cyan), var(--color-blue));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #22ddff, #2a48dd);
+}
+
+/* Selection styles */
+::selection {
+  background: rgba(0, 229, 255, 0.25);
+  color: var(--text-primary);
+}
+
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;

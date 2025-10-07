@@ -1,0 +1,134 @@
+/* Basic Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: var(--color-black);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar background on scroll */
+.navbar-scrolled {
+  background-color: var(--color-black);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.7);
+}
+
+/* Logo */
+.navbar-logo-img {
+  height: 36px;
+  display: block;
+  filter: brightness(1) saturate(1.1);
+}
+
+/* Nav Menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 2rem;
+}
+
+/* Unified Navigation Buttons */
+.nav-btn {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  border: none;
+  background: transparent;
+  padding: 0.4rem 0.75rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.nav-btn:hover {
+  color: var(--text-primary);
+}
+
+.nav-btn.active {
+  color: var(--text-primary);
+}
+
+/* Primary Contact Button */
+.nav-btn-primary {
+  background: var(--btn-bg);
+  color: var(--btn-text) !important;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--btn-border);
+  box-shadow: var(--btn-shadow);
+}
+
+.nav-btn-primary:hover {
+  background: var(--btn-hover-bg);
+  color: var(--btn-text) !important;
+}
+
+/* Hamburger Menu - Mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-black);
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  }
+  .nav-menu.active {
+    max-height: 400px; /* enough for all links */
+  }
+  .nav-item {
+    margin: 1rem 0;
+  }
+}
+
+/* Optional: smooth scrolling effect for anchor links */
+html {
+  scroll-behavior: smooth;
+}
