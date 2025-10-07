@@ -1,11 +1,15 @@
 {
-  "name": "roaming-travel-backend",
+  "name": "roaming-travel",
   "version": "1.0.0",
-  "description": "Backend API for Roaming Travel Portfolio website",
-  "main": "server.js",
+  "description": "Portfolio website for Roaming Travel",
+  "main": "functions/server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node functions/server.js",
+    "dev:backend": "nodemon functions/server.js",
+    "dev:frontend": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
@@ -13,9 +17,30 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "node-fetch": "^2.7.0",
-    "serverless-http": "^2.7.0"
+    "serverless-http": "^2.7.0",
+    "@emailjs/browser": "^4.4.1",
+    "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.23.22",
+    "gapi-script": "^1.2.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.9.3"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "@eslint/js": "^9.36.0",
+    "@tailwindcss/postcss": "^4.1.14",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.22",
+    "globals": "^16.4.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.14",
+    "vite": "^7.1.7"
   }
 }
